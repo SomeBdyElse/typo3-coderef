@@ -1,4 +1,3 @@
-# https://github.com/TYPO3/TYPO3.CMS/blob/1af354a579169374a5b0c2c4fca1c80d9f4d12d5/.editorconfig
 # EditorConfig is awesome: http://EditorConfig.org
 
 # top-most EditorConfig file
@@ -22,12 +21,30 @@ indent_size = 2
 indent_style = tab
 
 # ReST-Files
-[*.rst]
-indent_size = 3
+[*.{rst,rst.txt}]
+indent_size = 4
+max_line_length = 80
+
+# Markdown-Files
+[*.md]
 max_line_length = 80
 
 # YAML-Files
 [*.{yaml,yml}]
+indent_size = 2
+
+# NEON-Files
+[*.neon]
+indent_size = 2
+indent_style = tab
+
+#.eslintrc.json
+[.eslintrc.json]
+indent_size = 2
+indent_style = space
+
+# stylelint
+[.stylelintrc]
 indent_size = 2
 
 # package.json

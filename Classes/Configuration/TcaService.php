@@ -20,7 +20,7 @@ class TcaService
         $tca = $event->getTca();
 
         $tables = $this->coderefConfigurationService->getTables();
-        foreach($tables as $table) {
+        foreach ($tables as $table) {
             $this->addColumns($tca, $table);
             $this->addColumnsToTypes($tca, $table);
         }
@@ -41,7 +41,7 @@ class TcaService
 
     protected function addColumnsToTypes(array &$tca, string $table)
     {
-        foreach($tca[$table]['types'] as $type => &$typeDetails) {
+        foreach ($tca[$table]['types'] as $type => &$typeDetails) {
             if (!isset($typeDetails['showitem'])) {
                 continue;
             }

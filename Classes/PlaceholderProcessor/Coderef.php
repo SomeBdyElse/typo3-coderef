@@ -13,7 +13,7 @@ class Coderef implements PlaceholderProcessorInterface
 {
     public function canProcess(string $placeholder, array $referenceArray): bool
     {
-        return is_string($placeholder) && (strpos($placeholder, '%coderef(') !== false);
+        return is_string($placeholder) && (str_contains($placeholder, '%coderef('));
     }
 
     public function process(string $value, array $referenceArray)
