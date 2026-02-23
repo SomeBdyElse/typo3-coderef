@@ -6,6 +6,8 @@ services:
 
   SomeBdyElse\Coderef\Configuration\CoderefConfigurationService:
     public: true
+  SomeBdyElse\Coderef\Service\CoderefLookupService:
+    public: true
   SomeBdyElse\Coderef\Configuration\TcaService:
     tags:
       - name: event.listener
