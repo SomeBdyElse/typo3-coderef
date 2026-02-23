@@ -7,9 +7,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
-    - name: OSKAR-PHP-CS-Fixer
-      uses: OskarStark/php-cs-fixer-ga@2.17.3
+    - uses: shivammathur/setup-php@v2
       with:
-        args: --diff --dry-run
+        coverage: none
+        extensions: intl, zip
+        ini-values: memory_limit=-1, error_reporting=E_ALL, display_errors=On
+        php-version: 8.1
+
+    - run: composer update
+
+    - run: composer exec -- php-cs-fixer fix --diff --dry-run

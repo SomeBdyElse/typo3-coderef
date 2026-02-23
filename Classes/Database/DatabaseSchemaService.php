@@ -11,7 +11,7 @@ class DatabaseSchemaService
 {
     protected CoderefConfigurationService $coderefConfigurationService;
 
-    const SQL_CREATE_TABLE_TEMPLATE = '
+    public const SQL_CREATE_TABLE_TEMPLATE = '
         CREATE TABLE %s (
             %s varchar(255)
         );
