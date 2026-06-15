@@ -21,7 +21,7 @@ class CoderefLookupService
                 ->where(
                     $queryBuilder->expr()->eq('tx_coderef_identifier', $queryBuilder->createNamedParameter($coderef))
                 )
-                ->execute()->fetchOne();
+                ->executeQuery()->fetchOne();
         } catch (TableNotFoundException $tableNotFoundException) {
             throw new \UnexpectedValueException('Codref table not found: ' . $table, 1713194130145);
         }
